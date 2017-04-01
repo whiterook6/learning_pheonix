@@ -1,5 +1,14 @@
+*.ez
 /_build
 /cover
 /deps
+/doc
+/installer/_build
+/installer/tmp
+/node_modules
+/tmp
 erl_crash.dump
-*.ez
+
+
+.DS_Store
+prod.secret.exs

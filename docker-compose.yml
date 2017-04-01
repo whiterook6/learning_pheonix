@@ -2,18 +2,19 @@ version: "3"
 services:
 
     web:
-        image: "marcelocg/phoenix"
-        command: "mix phoenix"
+        build: .
+        image: "penguin:dev"
+        command: "mix phoenix.server"
         ports:
             - "4000:4000"
         volumes:
-            - ./phoenix:/code
+            - ./:/code
         working_dir: /code
         links:
             - db
 
     db:
-        image: "tcgerlach/sqlite"
-        volumes:
-            - ./sqlite:/data
-        working_dir: /data
+        image: postgres
+        environment:
+            POSTGRES_PASSWORD: docker
+            POSTGRES_USER: docker
