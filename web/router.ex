@@ -13,15 +13,16 @@ defmodule Penguin.Router do
     plug :accepts, ["json"]
   end
 
+  # Other scopes may use custom stacks.
+  scope "/api", Penguin do
+    pipe_through :api
+
+    resources "/todos", TodoController
+  end
+
   scope "/", Penguin do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
-    resources "/todos", TodoController
   end
-
-  # Other scopes may use custom stacks.
-  # scope "/api", Penguin do
-  #   pipe_through :api
-  # end
 end

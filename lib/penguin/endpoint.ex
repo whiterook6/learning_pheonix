@@ -1,7 +1,7 @@
 defmodule Penguin.Endpoint do
   use Phoenix.Endpoint, otp_app: :penguin
 
-  socket "/socket", Penguin.UserSocket
+  socket "/sockets/todo", Penguin.TodoSocket
 
   # Serve at "/" the static files from "priv/static" directory.
   #

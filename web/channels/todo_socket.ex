@@ -1,4 +1,4 @@
-defmodule Penguin.UserSocket do
+defmodule Penguin.TodoSocket do
   use Phoenix.Socket
 
   ## Channels
